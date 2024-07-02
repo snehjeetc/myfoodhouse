@@ -53,5 +53,4 @@ public class Restaurant extends AggregateRoot<RestaurantId> {
             return new Restaurant(this); 
         }
     }
-    
 }

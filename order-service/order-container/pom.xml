@@ -12,7 +12,6 @@
     <!-- <groupId>com.myfoodhouse</groupId> -->
     <artifactId>order-container</artifactId>
     <!-- <version>1.0-SNAPSHOT</version> -->
-    <!-- <packaging>pom</packaging> -->
     <properties>
        
     </properties>

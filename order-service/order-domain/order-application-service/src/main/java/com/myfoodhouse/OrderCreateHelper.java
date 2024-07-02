@@ -55,6 +55,8 @@ public class OrderCreateHelper {
     
     private Restaurant checkRestaurant(CreateOrderCommand createOrderCommand) {
         Restaurant restaurant = orderDataMapper.crateOrderCommandToRestaurant(createOrderCommand); 
+        log.info("Restaurant id : {}", restaurant.getId().getValue()); 
+        log.info("RestaurantRepository: " + restaurantRepository.getClass().toString()); 
         Optional<Restaurant> optionalRestaurant = restaurantRepository.findRestaurantInformation(restaurant); 
         if(optionalRestaurant.isEmpty()){ 
             log.warn("Restaurant with id : {} doesn't exist", restaurant.getId().getValue()); 

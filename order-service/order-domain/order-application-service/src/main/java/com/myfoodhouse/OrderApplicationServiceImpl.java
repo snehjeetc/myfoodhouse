@@ -32,12 +32,12 @@ class OrderApplicationServiceImpl implements OrderApplicationService{
 
     @Override
     public CreateOrderResponse createOrder(CreateOrderCommand createOrderCommand) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return orderCreateCommandHandler.createOrder(createOrderCommand); 
     }
 
     @Override
     public TrackOrderResponse trackOrder(TrackOrderQuery trackOrderQuery) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return trackCommandHandler.trackOrder(trackOrderQuery); 
     }
     
 }

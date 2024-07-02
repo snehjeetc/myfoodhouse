@@ -13,5 +13,5 @@ public interface IOrderService {
     OrderPaidEvent payOrder(Order order); 
     void approveOrder(Order order); 
     OrderCancelledEvent cancelOrderEvent(Order order, List<String> failureMessages); 
-    void cancelOrder(Order order, List<String> failureMessages); 
+    void cancelOrder(Order order, List<String> failureMessages);    
 }

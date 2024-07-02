@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import com.myfoodhouse.dto.create.CreateOrderCommand;
 import com.myfoodhouse.dto.create.CreateOrderResponse;
 import com.myfoodhouse.dto.create.OrderAddress;
+import com.myfoodhouse.dto.track.TrackOrderResponse;
 import com.myfoodhouse.order.domain.core.entity.OrderItem;
 import com.myfoodhouse.order.domain.core.entity.Order;
 import com.myfoodhouse.order.domain.core.entity.Product;
@@ -55,10 +56,11 @@ public class OrderDataMapper {
 
     }
 
-    public CreateOrderResponse orderToCreateOrderResponse(Order order) { 
+    public CreateOrderResponse orderToCreateOrderResponse(Order order, String message) { 
         return CreateOrderResponse.builder()
                 .orderTrackingId(order.getTrackingId().getValue())
                 .orderStatus(order.getOrderStatus())
+                .message(message)
                 .build(); 
     }
 
@@ -69,5 +71,13 @@ public class OrderDataMapper {
             address.getPostalCode(), 
             address.getStreet()
         );
+    }
+
+    public TrackOrderResponse orderToTrackOrderResponse(Order order) {
+        return TrackOrderResponse.builder()
+                .orderTrackingId(order.getTrackingId().getValue())
+                .orderStatus(order.getOrderStatus())
+                .failureMessages(order.getFailureMessages())
+                .build();
     }
 }
