@@ -1,6 +1,7 @@
 target/
 */target/*
 .idea/
+*/docker-compose/volumes/*
 .vscode/
 pom.xml.tag
 pom.xml.releaseBackup
