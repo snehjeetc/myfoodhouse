@@ -15,6 +15,9 @@ import com.myfoodhouse.sys.domain.valueobjects.OrderStatus;
 import com.myfoodhouse.sys.domain.valueobjects.RestaurantId;
 
 public class Order extends AggregateRoot<OrderId>{
+
+    public static final String FAILURE_MESSAGE_DELIMETER = ","; 
+
     private final CustomerId customerId; 
     private final RestaurantId restaurantId; 
     private final StreetAddress deliveryAddress; 
