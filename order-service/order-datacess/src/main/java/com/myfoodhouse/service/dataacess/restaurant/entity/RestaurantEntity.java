@@ -4,8 +4,6 @@ import java.math.BigDecimal;
 import java.util.Objects;
 import java.util.UUID;
 
-import com.myfoodhouse.sys.domain.valueobjects.RestaurantId;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
@@ -21,7 +19,7 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@IdClass(RestaurantId.class)
+@IdClass(RestaurantEntityId.class)
 @Table(name="order_restaurant_m_view", schema= "restaurant")
 @Entity
 public class RestaurantEntity {

@@ -3,12 +3,14 @@ package com.myfoodhouse.service.dataacess.customer.adapter;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.springframework.stereotype.Repository;
+
 import com.myfoodhouse.order.domain.core.entity.Customer;
 import com.myfoodhouse.ports.output.repository.CustomerRepository;
 import com.myfoodhouse.service.dataacess.customer.mapper.CustomerDataAccessMapper;
 import com.myfoodhouse.service.dataacess.customer.repository.CustomerJpaRepository;
 
-
+@Repository
 public class CustomerRepositoryImpl implements CustomerRepository {
  
     private final CustomerDataAccessMapper customerDataAccessMapper; 

@@ -2,6 +2,7 @@ package com.myfoodhouse.dto.message;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.List;
 
 import com.myfoodhouse.sys.domain.valueobjects.PaymentStatus;
 
@@ -22,4 +23,5 @@ public class PaymentResponse {
     private BigDecimal price; 
     private Instant createdAt; 
     private PaymentStatus paymentStatus; 
+    private List<String> failureMessages; 
 }

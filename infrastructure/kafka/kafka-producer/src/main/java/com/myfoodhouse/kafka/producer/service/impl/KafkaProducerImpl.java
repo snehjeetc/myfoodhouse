@@ -2,7 +2,7 @@ package com.myfoodhouse.kafka.producer.service.impl;
 
 import java.io.Serializable;
 import java.util.concurrent.CompletableFuture;
-import java.util.function.Consumer;
+import java.util.function.BiConsumer;
 
 import org.apache.avro.specific.SpecificRecordBase;
 import org.springframework.kafka.KafkaException;
@@ -27,11 +27,11 @@ public class KafkaProducerImpl<K extends Serializable, V extends SpecificRecordB
     }
 
     @Override
-    public void send(String topicName, K key, V message, Consumer<SendResult<K, V>> callback) {
+    public void send(String topicName, K key, V message, BiConsumer<SendResult<K, V>, Throwable> callback) {
         log.info("Sending message={} to topic={}", message, topicName);
         try {
             CompletableFuture<SendResult<K, V>> kafkaResultFuture = kafkaTemplate.send(topicName, key, message);
-            kafkaResultFuture.thenAcceptAsync(callback);
+            kafkaResultFuture.whenComplete(callback); 
         } catch (KafkaException exception) {
             log.error("Error on kafka producer on key : {}, message : {}, and exception : {}", key, message, exception.getMessage());
             throw new KafkaProducerException("Error on kafka producer -> key : " + key + ", message : " + message); 

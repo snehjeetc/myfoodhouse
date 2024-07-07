@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Component;
+
 import com.myfoodhouse.order.domain.core.entity.Product;
 import com.myfoodhouse.order.domain.core.entity.Restaurant;
 import com.myfoodhouse.service.dataacess.restaurant.entity.RestaurantEntity;
@@ -12,6 +14,7 @@ import com.myfoodhouse.sys.domain.valueobjects.Money;
 import com.myfoodhouse.sys.domain.valueobjects.ProductId;
 import com.myfoodhouse.sys.domain.valueobjects.RestaurantId;
 
+@Component
 public class RestaurantDataAccessMapper {
      public List<UUID> restaurantToRestaurantProducts(Restaurant restaurant) {
         return restaurant.getProducts().stream()

@@ -14,3 +14,4 @@ import com.myfoodhouse.service.dataacess.restaurant.entity.RestaurantEntityId;
 public interface RestaurantJpaRepository extends JpaRepository<RestaurantEntity, RestaurantEntityId>{
     Optional<List<RestaurantEntity>> findByRestaurantIdAndProductIdIn(UUID restaurantId, List<UUID> productIds); 
 }
+

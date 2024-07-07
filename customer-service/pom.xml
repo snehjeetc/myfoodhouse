@@ -5,44 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.myfoodhouse</groupId>
-        <artifactId>order-service</artifactId>
+        <artifactId>myfoodhouse</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <!-- <groupId>com.myfoodhouse</groupId> -->
-    <artifactId>order-container</artifactId>
-    <!-- <version>1.0-SNAPSHOT</version> -->
-    <properties>
-
-    </properties>
+    <groupId>com.myfoodhouse</groupId>
+    <artifactId>customer-service</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
     <dependencies>
-        <dependency>
-            <groupId>com.myfoodhouse</groupId>
-            <artifactId>order-domain-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.myfoodhouse</groupId>
-            <artifactId>order-application-service</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.myfoodhouse</groupId>
-            <artifactId>order-application</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.myfoodhouse</groupId>
-            <artifactId>order-datacess</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.myfoodhouse</groupId>
-            <artifactId>order-messaging-comp</artifactId>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -53,10 +24,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>${spring-boot-parent-version}</version>
-      </dependency>
+        </dependency>
 
-
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
     </dependencies>
+
 
     <build>
         <plugins>
@@ -65,7 +40,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <image>
-                        <name>${project.groupId}/myfoodhouse.service:${project.version}</name>
+                        <name>${project.groupId}/customer.service:${project.version}</name>
                     </image>
                 </configuration>
                 <executions>
@@ -79,5 +54,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
