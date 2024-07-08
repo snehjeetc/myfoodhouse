@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import com.myfoodhouse.order.domain.core.entity.Restaurant;
 import com.myfoodhouse.ports.output.repository.RestaurantRepository;
 import com.myfoodhouse.service.dataacess.restaurant.mapper.RestaurantDataAccessMapper;
-import com.myfoodhouse.service.dataacess.restaurant.repository.RestaurantJpaRepository;
+import com.myfoodhouse.system.dataaccess.restaurant.repository.RestaurantJpaRepository;
 
 @Component
 public class RestaurantRepositoryImpl implements RestaurantRepository {

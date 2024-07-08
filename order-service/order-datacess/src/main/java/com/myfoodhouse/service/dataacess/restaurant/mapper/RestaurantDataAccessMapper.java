@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
 
 import com.myfoodhouse.order.domain.core.entity.Product;
 import com.myfoodhouse.order.domain.core.entity.Restaurant;
-import com.myfoodhouse.service.dataacess.restaurant.entity.RestaurantEntity;
-import com.myfoodhouse.service.dataacess.restaurant.exception.RestaurantDataAccessException;
 import com.myfoodhouse.sys.domain.valueobjects.Money;
 import com.myfoodhouse.sys.domain.valueobjects.ProductId;
 import com.myfoodhouse.sys.domain.valueobjects.RestaurantId;
+import com.myfoodhouse.system.dataaccess.restaurant.entity.RestaurantEntity;
+import com.myfoodhouse.system.dataaccess.restaurant.exception.RestaurantDataAccessException;
 
 @Component
 public class RestaurantDataAccessMapper {

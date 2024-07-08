@@ -32,6 +32,13 @@
                   <artifactId>postgresql</artifactId>
             </dependency>
 
+
+            <dependency>
+                  <groupId>com.myfoodhouse</groupId>
+                  <artifactId>common-dataaccess</artifactId>
+            </dependency>
+
+
       </dependencies>
 
 </project>
